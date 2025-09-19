@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHANTERA</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        /* Style Dasar */
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-image: url('https://i.ibb.co.com/cc0wBTz4/45574-F7-F-0-E35-43-B6-90-E8-DF0-D1-E77-B0-F3.png');
+  background-size: cover;
+  background-position: center;
+}
+        
+        .logo {
+  				width: 150px;
+  				height: auto;
+				font-size: 2rm;
+}
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 5px;
+        }
+        
+        .nav-links a:hover {
+            color: #FF000;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.ibb.co.com/7t5Mzd01/D39-BFD5-E-A6-DE-42-BB-997-B-E4-F74-AEFB4-D9.pn');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+        
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+        }
+        
+        /* Product Section */
+        .products {
+            padding: 80px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .price {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: #2c3e50;
+            color: white;
+            padding: 80px 50px;
+            text-align: center;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #aaa;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: left;
+            padding: 0 20px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+                flex-direction: column;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            .nav-links {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .nav-links li {
+                margin: 0 5px;
+            }
+            
+            .hero h1 {
+             font-size: 2rem;
+				 color: #FFFF;
+				text-shadow: 0px 					2px 4px rgba(0, 0, 				0, 0.2);
+				font-family: 						'Montserrat', sans-				serif;
+				font-weight: bold;
+				
+            }
+            
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">.</div>
+            <ul class="nav-links">
+  </div>
+
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <a href="#products" class="btn">Lihat Produk</a>
+    </section>
+    
+    <!-- Product Section -->
+    <section class="products" id="products">
+        <div class="section-title">
+            <h2>Koleksi Kami</h2>
+        </div>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://i.ibb.co.com/wNDvGKfg/219-F7515-DECC-468-A-8-BE1-73-CF8-E000527.png" alt="ngga ada gambarnya? langsung cus wa" />
+                </div>
+                <div class="product-info">
+                    <h3>SHANTERA STREET FIGHT</h3>
+                    <div class="price">Rp 85.000</div>
+                    <a href="https:wa.me/62882003103751?text=Tolong%20Deskripsikan%20Etalase%201.com" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://i.ibb.co.com/4wbxLjnZ/64-B2099-D-054-D-4396-ACB3-D22822-CC89-FB.png" alt="ngga ada gambarnya? langsung cus wa" />
+                </div>
+                <div class="product-info">
+                    <h3>SHANTERA PEMBANTAI PENGHIANAT</h3>
+                    <div class="price">Rp 85.000</div>
+                    <a href="https:wa.me/62882003103751?text=Tolong%20Deskripsikan%20Etalase%202.com" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://i.ibb.co.com/tM51Ps0H/254-F567-F-0-B30-4-FAF-9-AD0-7-A8-E96703-A95.png" alt="ngga ada gambarnya? langsung cus wa" />
+                </div>
+                <div class="product-info">
+                    <h3>SHANTERA REBEL DETINY</h3>
+                    <div class="price">Rp 85.000</div>
+                    <a href="https:wa.me/62882003103751?text=Tolong%20Deskripsikan%20Etalase%203.com" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://i.ibb.co.com/VcxSzK25/815-F6-E04-103-C-480-A-A298-EA8967-F011-C7.png" alt="Kaos biru navy dengan logo kecil di dada dan detail jahitan merah" />
+                </div>
+                <div class="product-info">
+                    <h3>SHANTERA COURCAGE FOR THE THRUTH</h3>
+                    <div class="price">Rp 85.000</div>
+                    <a href="https:wa.me/62882003103751?text=Tolong%20Deskripsikan%20Etalase%204.com" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2>Tentang Brand Kami</h2>
+            <p>
+Kami adalah produsen kaos berkualitas dengan harga terjangkau. Bahan 24s yang lembut dan sablon yang tahan lama membuat produk kami menjadi pilihan tepat. Kami berkomitmen untuk memberikan produk terbaik dengan kontrol kualitas ketat. Jangan lewatkan promo-promo menarik kami!</p>
+            <p>
+
+- M (Lebar Dada: 50-52 cm, Panjang: 68-70 cm)
+- L (Lebar Dada: 54-56 cm, Panjang: 72-74 cm)
+- XL (Lebar Dada: 58-60 cm, Panjang: 76-78 cm).</p>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>NEWW BRAND</h3>
+                <p>Menjual kaos berkualitas dengan desain eksklusif untuk Anda.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Link Media Sosial Kami</h3>
+                <ul>
+                    <li><a href="https:wa.me/62882003103751?.com">Whatsapp</a></li>
+                    <li><a href="https://www.instagram.com/destiny_rebel?.com">Instagram</a></li>
+                    <li><a href="#contact">Tiktok</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Kontak Kami</h3>
+                <ul>
+                    <li>Email: shantera1922.com</li>
+                    <li>Telepon: ‪+62 882‑0031‑03751‬</li>
+                    <li>Alamat: Jl. Jolontoro Sambek Wonosobo</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2024.SHANTERA Brand lokal.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Simple animation for product cards when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
